@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Para que tenga un comportamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'Galimer';
+    src: local('Galimer'), url(../assets/fonts/zt-mota/ZTMota-Regular.ttf);
+}
+
+body {
+    font-family: 'Galimer';
+    background-color: #E9F8F9;
+}
+
+/* Header */
+.navbar {
+    background-color: #181823;
+    /* La posicion sera pegajosa haciendo que mientras que el padre ocupe parte del viewport esta tambien lo hara posicionandose siempre en el top */
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    color: #E9F8F9;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #181823;
+    transition: .3s ease-out all;
+}
+
+.navbar a:hover {
+    background-color: #537FE7;
+    color: #E9F8F9;
+    text-decoration: none;
+}
+
+@media (min-width: 468px) {
+    .contenedor {
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar a {
+        padding: 20px;
+    }
+}
+
+.contenedor {
+    max-width: 1000px;
+    width: 90%;
+    margin: auto;
+}
+
+/* Contenedor de la imagen */
+.contenedor-imagen {
+    /* El 100% del tamanio del viewport */
+    height: 100vh;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    /* La alineacion dentro de la caja */
+    vertical-align: top;
+    /* Como el contenido se reajusta al contenedor, sirve para fotos y videos */
+	object-fit: cover;
+    /* object-position determina donde se alinea dentro de la caja */
+	object-position: 0 bottom;
+}
+
+/* Main */
+main {
+    min-height: 100vh;
+}
+
+main .contenido p {
+    margin-bottom: 20px;
+    line-height: 30px;
+    color: #181823;
+}
+
+main .contenido .titulo {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	padding-top: 40px;
+}
+
+main .contenido .fecha {
+	font-size: 14px;
+	color: #7B8FA1;
+}
+
+/* Aside */
+
+aside {
+	min-width: 30%;
+	margin: 40px 20px 20px 0;
+	height: 100%;
+	background: #537FE7;
+	padding: 20px;
+	border-radius: 5px;
+    position: sticky;
+    top: 20px;
+}
+
+aside .titulo {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #E9F8F9;
+}
+
+aside .indice a {
+	display: block;
+	margin-bottom: 10px;
+	color: #C0EEF2;
+}
+
+/* Footer */
+footer .navbar {
+    position: sticky;
+    bottom: 0;
+}
+
+@media screen and (max-width: 900px){
+	/* .navbar .contenedor {
+		flex-wrap: wrap;
+		margin: 0;
+		width: 100%;
+	} */
+
+	/* .navbar a {
+		width: auto;
+		flex: 1;
+	} */
+
+	.contenedor-imagen {
+		height: 50vh;
+	}
+
+	/* main .contenedor {
+		flex-direction: column;
+	} */
+
+    aside {
+        /* Valor por defecto de todos los elmentos */
+        position: static;
+    }
+}
